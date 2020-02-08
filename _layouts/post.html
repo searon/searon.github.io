@@ -1,0 +1,30 @@
+---
+layout: default
+datatable: true
+---
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"
+	integrity="sha384-1UXhfqyOyO+W+XsGhiIFwwD3hsaHRz2XDGMle3b8bXPH5+cMsXVShDoHA3AH/y/p"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
+	integrity="sha384-L74JDRkaoB7PWnReNepwX6+kSckc13TJXrka4EerY9jxQxSDl0dTguSLcA7dEfq8"
+	crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function(){
+		$('table.display').DataTable( {
+			paging: false,
+			searching: true
+		}
+			);
+	});
+</script>
+
+<h1>{{ page.season }} - {{ page.title }}</h1>
+
+<p>
+{{ page.date | date_to_string }}
+</p>
+
+{{ content }}

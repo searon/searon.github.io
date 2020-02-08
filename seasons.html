@@ -1,0 +1,14 @@
+---
+title: Seasons
+---
+<h1>Seasons</h1>
+
+<ul>
+	{% assign sorted = site.seasons | sort: 'season' | reverse %}
+	{% for season in sorted %}
+	<li>
+		<h2><a href="{{ season.url }}">{{ season.season }}</a></h2>
+		<p>{{ season.content | markdownify }}</p>
+	</li>
+	{% endfor %}
+</ul>

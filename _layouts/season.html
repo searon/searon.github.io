@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<h1>{{ page.season }}</h1>
+
+{{ content }}
+
+<h2>Rankings</h2>
+<ul>
+	{% for season in site.posts %}
+	{% if season.season == page.season %}
+	<li><a href="{{ season.url }}">{{ season.title }}</a></li>
+	{% endif %}
+	{% endfor %}
+	<!-- Why doesn't this work???
+	{% assign filtered_posts = site.posts | where:"season",page.season %}
+	{% for season in filtered_posts %}
+	<li><a href="{{ season.url }}">{{ season.title }}</a></li>
+	{% endfor %} -->
+</ul>
