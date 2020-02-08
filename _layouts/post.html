@@ -6,8 +6,15 @@ datatable: true
 	integrity="sha384-1UXhfqyOyO+W+XsGhiIFwwD3hsaHRz2XDGMle3b8bXPH5+cMsXVShDoHA3AH/y/p"
 	crossorigin="anonymous">
 <style>
-	table.dataTable {
-		background-color: rgba(0,0,0,0);
+	tr,
+    tr > *,
+    tr.even>.sorting_1,
+    tr.even>.sorting_2,
+    tr.even>.sorting_3,
+    tr.odd>.sorting_1,
+    tr.odd>.sorting_2,
+    tr.odd>.sorting_3 {
+		background-color: #252525;
 	}
 </style>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
