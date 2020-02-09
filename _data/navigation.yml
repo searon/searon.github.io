@@ -1,6 +1,4 @@
-- name: Home
-  link: /
-- name: Seasons
-  link: /seasons.html
-- name: About
-  link: /about.html
+- title: Seasons
+  url: /seasons.html
+- title: About
+  url: /about.html
