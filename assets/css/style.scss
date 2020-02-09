@@ -38,3 +38,21 @@
 	padding-right: 20px;
 	padding-left: 20px;
 }
+.prev-next-box {
+	display: flex;
+}
+.prev-box {
+	flex: 1;
+}
+.next-box {
+	flex: 1;
+	text-align: right;
+}
+.season-box {
+	flex: 1;
+	text-align: center;
+}
+
+section {
+	padding-top: 10px;
+}

@@ -16,16 +16,72 @@ datatable: true
 		$('table.display').DataTable( {
 			paging: false,
 			searching: true,
-			orderClasses: false
-		}
-			);
+			orderClasses: false,
+			info: false
+		});
 	});
 </script>
 
-<h1>{{ page.season }} - {{ page.title }}</h1>
+{% assign seasonPages = site.posts | where: "season", page.season | sort: "date" %}
+{% assign fullSeason = site.seasons | where: "season", page.season | first %}
+
+<div class="prev-next-box">
+	{% for link in seasonPages %}
+		{% if link.title == page.title %}
+			<div class="prev-box">
+			{% unless forloop.first %}
+					<a href="{{ prev.url }}">&lt;&lt;{{ prev.title }}</a>
+			{% endunless %}
+			</div>
+			<div class="season-box">
+				<a href="{{ fullSeason.url }}">{{ fullSeason.season }}</a>
+			</div>
+			<div class="next-box">
+			{% unless forloop.last %}
+				{% assign next = seasonPages[forloop.index] %}
+					<a href="{{ next.url }}">{{ next.title }}&gt;&gt;</a>
+			{% endunless %}
+			</div>
+		{% endif %}
+		{% assign prev = link %}
+	{% endfor %}
+</div>
+
+<br><br>
+
+<div class="prev-next-box">
+	<div class="prev-box">
+		<h1>{{ page.season }} - {{ page.title }}</h1>
+	</div>
+	<div class="next-box">
+		{{ page.date | date_to_string }}
+	</div>
+</div>
 
 <p>
-{{ page.date | date_to_string }}
+{{ content }}
 </p>
 
-{{ content }}
+<br>
+
+<div class="prev-next-box">
+	{% for link in seasonPages %}
+		{% if link.title == page.title %}
+			<div class="prev-box">
+			{% unless forloop.first %}
+					<a href="{{ prev.url }}">&lt;&lt;{{ prev.title }}</a>
+			{% endunless %}
+			</div>
+			<div class="season-box">
+				<a href="{{ fullSeason.url }}">{{ fullSeason.season }}</a>
+			</div>
+			<div class="next-box">
+			{% unless forloop.last %}
+				{% assign next = seasonPages[forloop.index] %}
+					<a href="{{ next.url }}">{{ next.title }}&gt;&gt;</a>
+			{% endunless %}
+			</div>
+		{% endif %}
+		{% assign prev = link %}
+	{% endfor %}
+</div>
