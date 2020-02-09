@@ -1,0 +1,87 @@
+---
+# The scss file which include files from _sass/
+---
+@charset "UTF-8";
+
+/*!
+* Pixyll - A simple, beautiful Jekyll theme that's mobile first.
+* Crafted with <3 by John Otander (@4lpine) - ©2015-2019 John Otander
+* @author John Otander <johnotander@gmail.com> (http://johnotander.com/)
+* @link https://github.com/johnotander/pixyll
+* @license MIT
+*/
+
+@import 'variables';
+
+@import 'basscss';
+
+@import 'base';
+
+@import 'links';
+@import 'positions';
+@import 'clearfix';
+@import 'code';
+@import 'forms';
+@import 'typography';
+@import 'header';
+@import 'tables';
+@import 'animations';
+@import 'footer';
+@import 'social-icons';
+@import 'blockquotes';
+@import 'posts';
+@import 'media-queries';
+@import 'gists';
+@import 'measure';
+@import 'pagination';
+
+.prev-next-box {
+	display: flex;
+}
+
+.prev-box {
+	flex: 1;
+}
+
+.next-box {
+	flex: 1;
+	text-align: right;
+}
+
+.season-box {
+	flex: 1;
+	text-align: center;
+}
+
+.post-title {
+	font-size: 50px;
+}
+
+.display tr > * {
+	font-size:18px;
+}
+
+.dataTables_filter > * {
+	font-size:18px;
+}
+
+.dataTables_filter input {
+	padding: 5px 5px 5px 5px;
+	height: 35px;
+	font-size:15px;
+	margin-bottom: 5px;
+	margin-left: 4px;
+}
+
+.site-header .measure {
+	border-bottom: 2px solid #777;
+}
+
+.site-header {
+	padding-bottom: 10px;
+}
+
+.site-nav,
+.post {
+	padding-top: 0px;
+}
