@@ -30,10 +30,10 @@
       </div><!-- end header -->
 
     <div class="wrapper">
-      {% include navigation.html %}
 
       <section>
         <div id="title">
+          {% include navigation.html %}
           <h1>{{ site.title | default: site.github.repository_name }}</h1>
           <p>{{ site.description | default: site.github.project_tagline }}</p>
           <hr>
