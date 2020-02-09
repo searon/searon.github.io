@@ -25,40 +25,38 @@ datatable: true
 {% assign seasonPages = site.posts | where: "season", page.season | sort: "date" %}
 {% assign fullSeason = site.seasons | where: "season", page.season | first %}
 
-<div class="site-header">
-	<nav "site-nav">
-		<div class="prev-next-box">
-			{% for link in seasonPages %}
-				{% if link.title == page.title %}
-				<div class="prev-box">
-					{% unless forloop.first %}
-					<a class="nav-link" href="{{ prev.url }}">&lt;&lt;{{ prev.title }}</a>
-					{% endunless %}
-				</div>
-				<div class="season-box">
-					<a class="nav-link" href="{{ fullSeason.url }}">{{ fullSeason.season }}</a>
-				</div>
-				<div class="next-box">
-					{% unless forloop.last %}
-					{% assign next = seasonPages[forloop.index] %}
-					<a class="nav-link" href="{{ next.url }}">{{ next.title }}&gt;&gt;</a>
-					{% endunless %}
-				</div>
-				{% endif %}
-				{% assign prev = link %}
-			{% endfor %}
-		</div>
-	</nav>
+<div class="prev-next-box">
+	{% for link in seasonPages %}
+		{% if link.title == page.title %}
+			<div class="prev-box">
+			{% unless forloop.first %}
+					<a href="{{ prev.url }}">&lt;&lt;{{ prev.title }}</a>
+			{% endunless %}
+			</div>
+			<div class="season-box">
+				<a href="{{ fullSeason.url }}">{{ fullSeason.season }}</a>
+			</div>
+			<div class="next-box">
+			{% unless forloop.last %}
+				{% assign next = seasonPages[forloop.index] %}
+					<a href="{{ next.url }}">{{ next.title }}&gt;&gt;</a>
+			{% endunless %}
+			</div>
+		{% endif %}
+		{% assign prev = link %}
+	{% endfor %}
 </div>
 
-<div class="post-title">
-	<strong>{{ page.season }} - {{ page.title }}</strong>
-</div>
-<div>
-	{{ page.date | date_to_string }}
-</div>
+<br><br>
 
-<br>
+<div class="prev-next-box">
+	<div class="prev-box">
+		<h1>{{ page.season }} - {{ page.title }}</h1>
+	</div>
+	<div class="next-box">
+		{{ page.date | date_to_string }}
+	</div>
+</div>
 
 <p>
 {{ content }}
@@ -66,28 +64,24 @@ datatable: true
 
 <br>
 
-<div class="site-header">
-	<nav "site-nav">
-		<div class="prev-next-box">
-			{% for link in seasonPages %}
-				{% if link.title == page.title %}
-				<div class="prev-box">
-					{% unless forloop.first %}
-					<a class="nav-link" href="{{ prev.url }}">&lt;&lt;{{ prev.title }}</a>
-					{% endunless %}
-				</div>
-				<div class="season-box">
-					<a class="nav-link" href="{{ fullSeason.url }}">{{ fullSeason.season }}</a>
-				</div>
-				<div class="next-box">
-					{% unless forloop.last %}
-					{% assign next = seasonPages[forloop.index] %}
-					<a class="nav-link" href="{{ next.url }}">{{ next.title }}&gt;&gt;</a>
-					{% endunless %}
-				</div>
-				{% endif %}
-				{% assign prev = link %}
-			{% endfor %}
-		</div>
-	</nav>
+<div class="prev-next-box">
+	{% for link in seasonPages %}
+		{% if link.title == page.title %}
+			<div class="prev-box">
+			{% unless forloop.first %}
+					<a href="{{ prev.url }}">&lt;&lt;{{ prev.title }}</a>
+			{% endunless %}
+			</div>
+			<div class="season-box">
+				<a href="{{ fullSeason.url }}">{{ fullSeason.season }}</a>
+			</div>
+			<div class="next-box">
+			{% unless forloop.last %}
+				{% assign next = seasonPages[forloop.index] %}
+					<a href="{{ next.url }}">{{ next.title }}&gt;&gt;</a>
+			{% endunless %}
+			</div>
+		{% endif %}
+		{% assign prev = link %}
+	{% endfor %}
 </div>

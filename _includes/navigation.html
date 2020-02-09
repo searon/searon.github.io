@@ -1,7 +1,7 @@
 {% for item in site.data.navigation %}
-    {% if item.name and page.title == item.name %}
-        <a class="nav-active" href="{{ item.link }}">{{ item.name }}</a>
-    {% elsif item.name %}
-        <a class="nav-link" href="{{ item.link }}">{{ item.name }}</a>
-    {% endif %}
+<a href="{{ item.link }}">
+	<div class="nav-item">
+	{{ item.name }}
+	</div>
+</a>
 {% endfor %}

@@ -23,8 +23,6 @@ title: Home
 </script>
 
 {% for post in site.posts limit:1 %}
-<div class="post-title">
-	<strong>{{ post.season }} - {{ post.title }}</strong>
-</div>
+<h1>{{ post.season }} - {{ post.title }}</h1>
 {{ post.content }}
 {% endfor %}
