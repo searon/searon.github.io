@@ -6,12 +6,15 @@ title: Seasons
 	<strong>{{ page.title }}</strong>
 </div>
 
-<ul>
-	{% assign sorted = site.seasons | sort: 'season' | reverse %}
-	{% for season in sorted %}
-	<li>
-		<h2><a href="{{ season.url }}">{{ season.season }}</a></h2>
-		<p>{{ season.content | markdownify }}</p>
-	</li>
-	{% endfor %}
-</ul>
+{% assign sorted = site.seasons | sort: 'season' | reverse %}
+<div class="site-header">
+	<nav "site-nav">
+		{% for season in sorted %}
+		<li>
+			<a class="nav-link" href="{{ season.url }}">
+					{{ season.season }}
+			</a>
+		</li>
+		{% endfor %}
+	</nav>
+</div>
