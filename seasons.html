@@ -2,7 +2,9 @@
 layout: default
 title: Seasons
 ---
-<h1>Seasons</h1>
+<div class="post-title">
+	<strong>{{ page.title }}</strong>
+</div>
 
 <ul>
 	{% assign sorted = site.seasons | sort: 'season' | reverse %}
